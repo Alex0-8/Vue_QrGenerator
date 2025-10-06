@@ -1,15 +1,17 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <IndexHeader title="Texto a Qr"/>
+  <TextToQr />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import IndexHeader from './components/IndexHeader.vue';
+import TextToQr from './components/TextToQr.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    IndexHeader,
+    TextToQr
   }
 }
 </script>
@@ -20,7 +22,6 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  color: #42b983;
 }
 </style>
