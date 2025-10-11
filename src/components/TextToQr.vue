@@ -1,11 +1,13 @@
 <template>
     <main>
-        <section>
-            <div class="qr-generator">
+        <section class="qr-generator">
                 <label for="txt">Escibe tu texto</label>
-                <input v-model="text" type="txt" id="txt" placeholder="...">
+                <div>
+                    <button @click="cleanTxt"><svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg></button>
+                    <input v-model="text" type="txt" id="txt" placeholder="...">
+                    <button @click="pasteText" class="paste-txt">Pegar</button>
+                </div>
                 <canvas ref="canvas" ></canvas>
-            </div>
         </section>
     </main>
 </template>
@@ -41,6 +43,23 @@ export default {
             }catch (err) {
                 console.log(`Ha ocurrido un error: ${err}`)
             }
+        },
+
+        cleanTxt() {
+            this.text = "";
+        },
+
+        async pasteText() {
+            try{
+                const textFromClipboard = await navigator.clipboard.readText();
+                if(textFromClipboard){
+                    this.text = textFromClipboard;
+                }else{
+                    console.log("no se encontro nada en el portapapeles")
+                }
+            }catch(err){
+                console.error("no se pudo acceder al portapapeles")
+            }
         }
     }
 }
@@ -62,7 +81,6 @@ label{
 
 input{
     font-size: 20px;
-    border-radius: 8px;
     padding: 5px;
     background-color: #212433;
     outline: none;
@@ -73,6 +91,32 @@ input{
 
 input:focus{
     border: 2px solid #c92ff8;
+}
+
+div{
+    display: flex;
+    justify-items: center;
+
+    button {
+        cursor: pointer;
+        padding: 5px;
+        background-color: #24f3db;
+        border-radius: 8px 0 0 8px;
+        border: none;
+        transition: all .3s ease;
+
+        &:hover{
+            transform: scale(1.05);
+        }
+
+        &:active{
+            transform: scale(.9);
+        }
+    }
+
+    .paste-txt{
+        border-radius: 0 8px 8px 0;
+    }
 }
 
 </style>
