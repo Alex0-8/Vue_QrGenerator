@@ -15,6 +15,9 @@
 
 🔗 **Demo en vivo** → [Vue QrGenerator/](https://alex0-8.github.io/Vue_QrGenerator/)
 
+<img align="center" width="1358" height="597" alt="Qr_Generator" src="https://github.com/user-attachments/assets/756bd1d2-d60d-4f2c-8a32-b4a5072d5975" />
+
+
 ---
 
 ## ✨ Características principales
@@ -102,6 +105,8 @@ Siéntete libre de usar, modificar y aprender de este proyecto.
 **Text to QR** was my first Vue 3 project. The app allows typing or pasting text and generates a QR code in real time using the **qrcode** library. Great for learning reactivity and canvas manipulation in Vue.
 
 🔗 **Live demo** → [Vue QrGenerator/](https://alex0-8.github.io/Vue_QrGenerator/)
+
+<img align="center" width="1358" height="597" alt="Qr_Generator" src="https://github.com/user-attachments/assets/756bd1d2-d60d-4f2c-8a32-b4a5072d5975" />
 
 ---
 
